@@ -184,7 +184,7 @@ const StudentSuccessEcosystem = () => {
           <h1 className="text-4xl font-bold text-slate-800 mb-2">
             Student Experience Ecosystem Explorer
           </h1>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-sm font-medium text-slate-700 w-12">
             The Learning Triangle and the Focus Wheel models form a mutually reinforcing ecosystem. The Focus Wheel visualizes the outer (or extrinsic) experience of the learner’s environment, while the Learning Triangle represents the inner experience of learning itself. Together, they operate as a bi-directional system — where intrinsic states shape extrinsic outcomes, and extrinsic supports restore or strengthen intrinsic capacities. Use the tool below to explore how intrinsic learner needs and extrinsic support domains dynamically interact in the WGU student experience model.
           </p>
         </header>
@@ -306,9 +306,9 @@ const StudentSuccessEcosystem = () => {
                       x={x}
                       y={y}
                       textAnchor="middle"
-                      dominantBaseline="middle"
+                      dominantBaseline="top"
                       fill="white"
-                      fontSize="13"
+                      fontSize="11"
                       fontWeight="600"
                       className="pointer-events-none"
                       style={{ userSelect: 'none' }}
@@ -340,7 +340,7 @@ const StudentSuccessEcosystem = () => {
                   cy="280"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
                   fill="#7C3AED"
-                  opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.6}
+                  opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
                     setHoveredIntrinsic('learning');
@@ -370,7 +370,7 @@ const StudentSuccessEcosystem = () => {
                   cy="440"
                   r={hoveredIntrinsic === 'mindset' ? 55 : 45}
                   fill="#DC2626"
-                  opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.6}
+                  opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
                     setHoveredIntrinsic('mindset');
@@ -400,7 +400,7 @@ const StudentSuccessEcosystem = () => {
                   cy="440"
                   r={hoveredIntrinsic === 'belonging' ? 55 : 45}
                   fill="#059669"
-                  opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.6}
+                  opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
                     setHoveredIntrinsic('belonging');
