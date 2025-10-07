@@ -17,7 +17,7 @@ const StudentSuccessEcosystem = () => {
       id: 'academics',
       name: 'Academics',
       color: '#3B82F6',
-      angle: 0,
+      angle: 270,
       influences: { learning: 90, mindset: 60, belonging: 40 },
       description: 'Academic performance, course engagement, and learning outcomes',
       example: 'Strong academic support helps students master content (Learning) and build confidence (Mindset)'
@@ -26,7 +26,7 @@ const StudentSuccessEcosystem = () => {
       id: 'effectiveness',
       name: 'Effectiveness',
       color: '#8B5CF6',
-      angle: 45,
+      angle: 225,
       influences: { learning: 70, mindset: 85, belonging: 30 },
       description: 'Time management, study skills, and organizational capabilities',
       example: 'Effective study strategies boost both learning capacity and student self-efficacy'
@@ -53,7 +53,7 @@ const StudentSuccessEcosystem = () => {
       id: 'community',
       name: 'School Community',
       color: '#F59E0B',
-      angle: 180,
+      angle: 45,
       influences: { learning: 45, mindset: 55, belonging: 95 },
       description: 'Peer connections, faculty relationships, and sense of institutional belonging',
       example: 'Active participation in university community directly strengthens sense of belonging and identity'
@@ -62,7 +62,7 @@ const StudentSuccessEcosystem = () => {
       id: 'commitment',
       name: 'Commitment to Graduation',
       color: '#10B981',
-      angle: 225,
+      angle: 180,
       influences: { learning: 60, mindset: 90, belonging: 60 },
       description: 'Goal clarity, persistence, and dedication to degree completion',
       example: 'Clear goals and strong commitment fuel motivation and sustained effort through challenges'
@@ -71,7 +71,7 @@ const StudentSuccessEcosystem = () => {
       id: 'finances',
       name: 'Finances',
       color: '#14B8A6',
-      angle: 270,
+      angle: 0,
       influences: { learning: 55, mindset: 70, belonging: 45 },
       description: 'Financial aid, budgeting, and economic stability',
       example: 'Financial security reduces stress and enables focus on learning and growth'
