@@ -211,7 +211,7 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = 300 - (domainAlignment * 120);
+                const radius = 375 - (domainAlignment * 120);
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
@@ -241,7 +241,7 @@ const StudentSuccessEcosystem = () => {
                         width="50"
                         height="20"
                         fill="white"
-                        opacity="0.9"
+                        opacity="0.6"
                         rx="4"
                       />
                       <text
@@ -280,9 +280,9 @@ const StudentSuccessEcosystem = () => {
                 const domainAlignment = totalScore / maxPossibleScore; // Normalize to 0-1 range
                 
                 // Dynamic radius: stronger alignment = closer to center
-                // Range from 180 (very close) to 300 (far away)
+                // Range from 180 (very close) to 375 (far away)
                 const minRadius = 180;
-                const maxRadius = 300;
+                const maxRadius = 375;
                 const radius = maxRadius - (domainAlignment * (maxRadius - minRadius));
                 
                 const angleRad = (domain.angle * Math.PI) / 180;
@@ -325,9 +325,9 @@ const StudentSuccessEcosystem = () => {
 
               {/* Learning Triangle */}
               <g>
-                {/* Triangle outline */}
+                {/* Triangle outline: old coordinates: 400,280 330,440 470,440 */}
                 <polygon
-                  points="400,280 330,440 470,440"
+                  points="400,319 330,440 470,440"
                   fill="none"
                   stroke="#64748B"
                   strokeWidth="2"
@@ -337,7 +337,7 @@ const StudentSuccessEcosystem = () => {
                 {/* Learning (top) */}
                 <circle
                   cx="400"
-                  cy="280"
+                  cy="319"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
                   fill="#7C3AED"
                   opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
@@ -354,7 +354,7 @@ const StudentSuccessEcosystem = () => {
                 />
                 <text
                   x="400"
-                  y="285"
+                  y="324"
                   textAnchor="middle"
                   fill="white"
                   fontSize="16"
