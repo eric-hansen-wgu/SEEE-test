@@ -140,7 +140,7 @@ const StudentSuccessEcosystem = () => {
     const totalScore = learningScore + mindsetScore + belongingScore;
     const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
     const domainAlignment = totalScore / maxPossibleScore;
-    const radius = 300 - (domainAlignment * 120);
+    const radius = 350 - (domainAlignment * 120);
     
     const angleRad = (domain.angle * Math.PI) / 180;
     const domainX = centerX + radius * Math.cos(angleRad);
@@ -166,7 +166,7 @@ const StudentSuccessEcosystem = () => {
         x2={intrinsicX}
         y2={intrinsicY}
         stroke={domain.color}
-        strokeWidth={strength / 20}
+        strokeWidth={strength / 10}
         opacity={opacity * 0.6}
         className="transition-all duration-300"
       />
@@ -211,7 +211,7 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = 375 - (domainAlignment * 120);
+                const radius = 325 - (domainAlignment * 120);
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
@@ -280,9 +280,9 @@ const StudentSuccessEcosystem = () => {
                 const domainAlignment = totalScore / maxPossibleScore; // Normalize to 0-1 range
                 
                 // Dynamic radius: stronger alignment = closer to center
-                // Range from 180 (very close) to 375 (far away)
+                // Range from 180 (very close) to 350 (far away)
                 const minRadius = 180;
-                const maxRadius = 375;
+                const maxRadius = 350;
                 const radius = maxRadius - (domainAlignment * (maxRadius - minRadius));
                 
                 const angleRad = (domain.angle * Math.PI) / 180;
