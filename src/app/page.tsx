@@ -312,7 +312,7 @@ const StudentSuccessEcosystem = () => {
                     />
                     <text
                       x={x}
-                      y={y} - {domain.name.split(' ').length * 6}
+                      y={y - (domain.name.split(' ').length * 6)}
                       textAnchor="middle"
                       dominantBaseline="top"
                       fill="white"
