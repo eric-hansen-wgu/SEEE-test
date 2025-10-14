@@ -225,8 +225,8 @@ const StudentSuccessEcosystem = () => {
                 const y = centerY + radius * Math.sin(angleRad);
                 
                 // Calculate percentile point for label placement
-                const midX = centerX + (radius * 0.75) * Math.cos(angleRad);
-                const midY = centerY + (radius * 0.75) * Math.sin(angleRad);
+                const midX = centerX + (radius * 0.66) * Math.cos(angleRad);
+                const midY = centerY + (radius * 0.66) * Math.sin(angleRad);
                 
                 return (
                   <g key={`alignment-${domain.id}`}>
