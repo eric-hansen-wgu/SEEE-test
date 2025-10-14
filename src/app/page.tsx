@@ -5,7 +5,7 @@ import { Info } from 'lucide-react';
 const StudentSuccessEcosystem = () => {
   const [selectedDomain, setSelectedDomain] = useState(null);
   const [intrinsicLevels, setIntrinsicLevels] = useState({
-    learning: 70,
+    cognition: 70,
     mindset: 70,
     belonging: 70
   });
@@ -18,7 +18,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Academics',
       color: '#3B82F6',
       angle: 270,
-      influences: { learning: 90, mindset: 60, belonging: 40 },
+      influences: { cognition: 90, mindset: 60, belonging: 40 },
       description: 'Academic performance, course engagement, and learning outcomes',
       example: 'Strong academic support helps students master content (Learning) and build confidence (Mindset)'
     },
@@ -27,7 +27,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Effectiveness',
       color: '#8B5CF6',
       angle: 225,
-      influences: { learning: 70, mindset: 85, belonging: 30 },
+      influences: { cognition: 70, mindset: 85, belonging: 30 },
       description: 'Time management, study skills, and organizational capabilities',
       example: 'Effective study strategies boost both learning capacity and student self-efficacy'
     },
@@ -36,7 +36,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Managing Commitments',
       color: '#EC4899',
       angle: 90,
-      influences: { learning: 40, mindset: 80, belonging: 50 },
+      influences: { cognition: 40, mindset: 80, belonging: 50 },
       description: 'Balancing school, work, family, and personal responsibilities',
       example: 'Successfully managing competing demands strengthens resilience and sense of control'
     },
@@ -45,7 +45,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Health & Support',
       color: '#EF4444',
       angle: 135,
-      influences: { learning: 50, mindset: 75, belonging: 70 },
+      influences: { cognition: 50, mindset: 75, belonging: 70 },
       description: 'Physical health, mental wellness, and access to support systems',
       example: 'Wellness resources and support networks foster both wellbeing and community connection'
     },
@@ -54,7 +54,7 @@ const StudentSuccessEcosystem = () => {
       name: 'School Community',
       color: '#F59E0B',
       angle: 45,
-      influences: { learning: 45, mindset: 55, belonging: 95 },
+      influences: { cognition: 45, mindset: 55, belonging: 95 },
       description: 'Peer connections, faculty relationships, and sense of institutional belonging',
       example: 'Active participation in university community directly strengthens sense of belonging and identity'
     },
@@ -63,7 +63,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Commitment to Graduation',
       color: '#10B981',
       angle: 180,
-      influences: { learning: 60, mindset: 90, belonging: 60 },
+      influences: { cognition: 60, mindset: 90, belonging: 60 },
       description: 'Goal clarity, persistence, and dedication to degree completion',
       example: 'Clear goals and strong commitment fuel motivation and sustained effort through challenges'
     },
@@ -72,7 +72,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Finances',
       color: '#14B8A6',
       angle: 0,
-      influences: { learning: 55, mindset: 70, belonging: 45 },
+      influences: { cognition: 55, mindset: 70, belonging: 45 },
       description: 'Financial aid, budgeting, and economic stability',
       example: 'Financial security reduces stress and enables focus on learning and growth'
     },
@@ -81,7 +81,7 @@ const StudentSuccessEcosystem = () => {
       name: 'Career',
       color: '#06B6D4',
       angle: 315,
-      influences: { learning: 75, mindset: 80, belonging: 55 },
+      influences: { cognition: 75, mindset: 80, belonging: 55 },
       description: 'Career planning, professional development, and future opportunities',
       example: 'Career clarity and progress strengthen motivation and give learning immediate relevance'
     }
@@ -142,11 +142,11 @@ const StudentSuccessEcosystem = () => {
     const centerY = 400;
     
     // Calculate domain position
-    const learningScore = domain.influences.learning * intrinsicLevels.learning;
+    const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
     const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
     const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
-    const totalScore = learningScore + mindsetScore + belongingScore;
-    const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
+    const totalScore = cognitionScore + mindsetScore + belongingScore;
+    const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
     const domainAlignment = totalScore / maxPossibleScore;
     const radius = 350 - (domainAlignment * 120);
     
@@ -212,11 +212,11 @@ const StudentSuccessEcosystem = () => {
                 const centerY = 400;
                 
                 // Calculate alignment score (same as below)
-                const learningScore = domain.influences.learning * intrinsicLevels.learning;
+                const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
                 const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
                 const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
-                const totalScore = learningScore + mindsetScore + belongingScore;
-                const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
+                const totalScore = cognitionScore + mindsetScore + belongingScore;
+                const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
                 const radius = 325 - (domainAlignment * 120);
@@ -275,16 +275,16 @@ const StudentSuccessEcosystem = () => {
                 // Calculate weighted alignment between domain influences and intrinsic levels
                 // Each domain's influences are values (0-100) indicating how much that domain affects each intrinsic need
                 // Multiply domain influence strength by current intrinsic level
-                const learningScore = domain.influences.learning * intrinsicLevels.learning;
+                const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
                 const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
                 const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
                 
                 // Sum the scores
-                const totalScore = learningScore + mindsetScore + belongingScore;
+                const totalScore = cognitionScore + mindsetScore + belongingScore;
                 
                 // Normalize based on THIS domain's maximum possible score
                 // Max occurs when all intrinsic levels are 100
-                const maxPossibleScore = (domain.influences.learning + domain.influences.mindset + domain.influences.belonging) * 100;
+                const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore; // Normalize to 0-1 range
                 
                 // Dynamic radius: stronger alignment = closer to center
@@ -476,7 +476,9 @@ const StudentSuccessEcosystem = () => {
               <div className="space-y-4">
                 {intrinsicNeeds.map(need => (
                   <div key={need.id}>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label 
+                      className={need.id === 'learning' ? 'hidden' : 'block text-sm font-medium text-slate-700 mb-2'}
+                    >
                       {need.name}: {intrinsicLevels[need.id]}%
                     </label>
                     <input
@@ -488,7 +490,7 @@ const StudentSuccessEcosystem = () => {
                         ...intrinsicLevels,
                         [need.id]: parseInt(e.target.value)
                       })}
-                      className="w-full"
+                      className={need.id === 'learning' ? 'hidden' : 'w-full'}
                       style={{
                         accentColor: need.color
                       }}
