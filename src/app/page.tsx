@@ -89,12 +89,12 @@ const StudentSuccessEcosystem = () => {
 
   const intrinsicNeeds = [
     { 
-      id: 'learning', 
-      name: 'Learning', 
+      id: 'cognition', 
+      name: 'Cognition', 
       color: '#7C3AED', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
-      context: 'Learning encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
+      context: 'Cognition encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
     },
     { 
       id: 'mindset', 
@@ -111,6 +111,14 @@ const StudentSuccessEcosystem = () => {
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
       context: 'Belonging reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+    },
+    { 
+      id: 'learning', 
+      name: 'Learning', 
+      color: '#555555', 
+      position: 'top',
+      description: 'The successful culmination of all components to drive the mission and outcome of WGU',
+      context: 'Learning is conditionally irrespective interpretation of juxtaposed, competing, or remixed methods, definitions, philosophies, frameworks, and/or contexts by which to choose a superior way of knowing, working, behaving, and/or thinking.'
     }
   ];
 
@@ -334,23 +342,23 @@ const StudentSuccessEcosystem = () => {
                   opacity="0.3"
                 />
 
-                {/* Learning (top) */}
+                {/* Cognition (top) */}
                 <circle
                   cx="400"
                   cy="319"
-                  r={hoveredIntrinsic === 'learning' ? 55 : 45}
+                  r={hoveredIntrinsic === 'cognition' ? 55 : 45}
                   fill="#7C3AED"
-                  opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
+                  opacity={hoveredIntrinsic === 'cognition' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
-                    setHoveredIntrinsic('learning');
-                    setTooltipIntrinsic('learning');
+                    setHoveredIntrinsic('cognition');
+                    setTooltipIntrinsic('cognition');
                   }}
                   onMouseLeave={() => {
                     setHoveredIntrinsic(null);
                     setTooltipIntrinsic(null);
                   }}
-                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'learning' ? null : 'learning')}
+                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'cognition' ? null : 'cognition')}
                 />
                 <text
                   x="400"
@@ -361,7 +369,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  Learning
+                  Cognition
                 </text>
 
                 {/* Mindset (bottom left) */}
@@ -422,6 +430,36 @@ const StudentSuccessEcosystem = () => {
                   className="pointer-events-none"
                 >
                   Belonging
+                </text>
+
+                {/* Learning (middle center) */}
+                <circle
+                  cx="400"
+                  cy="400"
+                  r={hoveredIntrinsic === 'learning' ? 55 : 45}
+                  fill="#7C3AED"
+                  opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
+                  className="cursor-pointer transition-all duration-300"
+                  onMouseEnter={() => {
+                    setHoveredIntrinsic('learning');
+                    setTooltipIntrinsic('learning');
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredIntrinsic(null);
+                    setTooltipIntrinsic(null);
+                  }}
+                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'learning' ? null : 'learning')}
+                />
+                <text
+                  x="400"
+                  y="324"
+                  textAnchor="middle"
+                  fill="white"
+                  fontSize="16"
+                  fontWeight="700"
+                  className="pointer-events-none"
+                >
+                  Learning
                 </text>
               </g>
             </svg>
