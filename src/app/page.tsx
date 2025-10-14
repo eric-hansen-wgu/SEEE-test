@@ -98,19 +98,19 @@ const StudentSuccessEcosystem = () => {
     },
     { 
       id: 'mindset', 
-      name: 'Mindset', 
+      name: 'Conation', 
       color: '#DC2626', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
-      context: 'Mindset includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
+      context: 'Conation (Mindset?) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
     },
     { 
       id: 'belonging', 
-      name: 'Belonging', 
+      name: 'Affection', 
       color: '#059669', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
-      context: 'Belonging reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+      context: 'Affection (Belonging?) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
     },
     { 
       id: 'learning', 
