@@ -369,7 +369,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  Cognition
+                  {intrinsicNeeds['cognition'].name}
                 </text>
 
                 {/* Mindset (bottom left) */}
@@ -399,7 +399,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  Mindset
+                  {intrinsicNeeds['mindset'].name}
                 </text>
 
                 {/* Belonging (bottom right) */}
@@ -429,7 +429,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  Belonging
+                  {intrinsicNeeds['belonging'].name}
                 </text>
 
                 {/* Learning (middle center) */}
@@ -459,7 +459,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  Learning
+                  {intrinsicNeeds['learning'].name}
                 </text>
               </g>
             </svg>
