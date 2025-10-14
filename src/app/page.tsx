@@ -122,6 +122,10 @@ const StudentSuccessEcosystem = () => {
     }
   ];
 
+  const getNeedNameById = (id) => {
+    return intrinsicNeeds.find(item => item.id === id)?.name;
+  };
+  
   const getConnectionStrength = (domain, intrinsic) => {
     if (!domain || !intrinsic) return 0;
     return domain.influences[intrinsic] || 0;
@@ -369,7 +373,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  {intrinsicNeeds['cognition'].name}
+                  {getNeedNameById('cognition')}
                 </text>
 
                 {/* Mindset (bottom left) */}
@@ -399,7 +403,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  {intrinsicNeeds['mindset'].name}
+                  {getNeedNameById('mindset')}
                 </text>
 
                 {/* Belonging (bottom right) */}
@@ -429,7 +433,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  {intrinsicNeeds['belonging'].name}
+                  {getNeedNameById('belonging')}
                 </text>
 
                 {/* Learning (middle center) */}
@@ -459,7 +463,7 @@ const StudentSuccessEcosystem = () => {
                   fontWeight="700"
                   className="pointer-events-none"
                 >
-                  {intrinsicNeeds['learning'].name}
+                  {getNeedNameById('learning')}
                 </text>
               </g>
             </svg>
