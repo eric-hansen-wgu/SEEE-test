@@ -224,9 +224,9 @@ const StudentSuccessEcosystem = () => {
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
                 
-                // Calculate midpoint for label placement
-                const midX = centerX + (radius / 2) * Math.cos(angleRad);
-                const midY = centerY + (radius / 2) * Math.sin(angleRad);
+                // Calculate percentile point for label placement
+                const midX = centerX + (radius * 0.75) * Math.cos(angleRad);
+                const midY = centerY + (radius * 0.75) * Math.sin(angleRad);
                 
                 return (
                   <g key={`alignment-${domain.id}`}>
@@ -312,7 +312,7 @@ const StudentSuccessEcosystem = () => {
                     />
                     <text
                       x={x}
-                      y={y - ((domain.name.split(' ').length - 1) * 6)}
+                      y={y - ((domain.name.split(' ').length - 1) * 6) + 4}
                       textAnchor="middle"
                       dominantBaseline="top"
                       fill="white"
@@ -546,7 +546,10 @@ const StudentSuccessEcosystem = () => {
                   {intrinsicNeeds.map(need => {
                     const strength = selectedDomain.influences[need.id];
                     return (
-                      <div key={need.id} className="flex items-center gap-2">
+                      <div 
+                        key={need.id} 
+                        className={need.id === 'learning' ? 'hidden' : 'flex items-center gap-2'}
+                      >
                         <span className="text-sm text-slate-600 w-24">
                           {need.name}:
                         </span>
