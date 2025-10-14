@@ -312,7 +312,7 @@ const StudentSuccessEcosystem = () => {
                     />
                     <text
                       x={x}
-                      y={y - (domain.name.split(' ').length * 6)}
+                      y={y - ((domain.name.split(' ').length - 1) * 6)}
                       textAnchor="middle"
                       dominantBaseline="top"
                       fill="white"
@@ -452,7 +452,7 @@ const StudentSuccessEcosystem = () => {
                 />
                 <text
                   x="400"
-                  y="408"
+                  y="404"
                   textAnchor="middle"
                   fill="white"
                   fontSize="16"
@@ -550,7 +550,9 @@ const StudentSuccessEcosystem = () => {
                         <span className="text-sm text-slate-600 w-24">
                           {need.name}:
                         </span>
-                        <div className="flex-1 bg-slate-200 rounded-full h-2">
+                        <div 
+                          className={need.id === 'learning' ? 'hidden' : 'flex-1 bg-slate-200 rounded-full h-2'}
+                        >
                           <div
                             className="h-2 rounded-full transition-all duration-300"
                             style={{
@@ -559,7 +561,9 @@ const StudentSuccessEcosystem = () => {
                             }}
                           />
                         </div>
-                        <span className="text-sm font-medium text-slate-700 w-12">
+                        <span 
+                          className={need.id === 'learning' ? 'hidden' : 'text-sm font-medium text-slate-700 w-12'}
+                        >
                           {strength}%
                         </span>
                       </div>
