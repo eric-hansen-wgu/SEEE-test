@@ -192,7 +192,7 @@ const StudentSuccessEcosystem = () => {
           <h1 className="text-4xl font-bold text-slate-800 mb-2">
             Student Experience Ecosystem Explorer
           </h1>
-          <p className="text-sm font-medium text-slate-700 mb-3">
+          <p className="text-left text-sm font-medium text-slate-700 mb-3">
             The Learning Triangle and the Focus Wheel models form a mutually reinforcing ecosystem. The Focus Wheel visualizes the outer (or extrinsic) experience of the learner’s environment, while the Learning Triangle represents the inner experience of learning itself. Together, they operate as a bi-directional system — where intrinsic states shape extrinsic outcomes, and extrinsic supports restore or strengthen intrinsic capacities. Use the tool below to explore how intrinsic learner needs and extrinsic support domains dynamically interact in the WGU student experience model.
           </p>
         </header>
@@ -312,7 +312,7 @@ const StudentSuccessEcosystem = () => {
                     />
                     <text
                       x={x}
-                      y={y}
+                      y={y} - {domain.name.split(' ').length * 6}
                       textAnchor="middle"
                       dominantBaseline="top"
                       fill="white"
@@ -322,7 +322,7 @@ const StudentSuccessEcosystem = () => {
                       style={{ userSelect: 'none' }}
                     >
                       {domain.name.split(' ').map((word, i) => (
-                        <tspan key={i} x={x} dy={i === 0 ? 0 : 14}>
+                        <tspan key={i} x={x} dy={i === 0 ? 0 : 12}>
                           {word}
                         </tspan>
                       ))}
@@ -452,7 +452,7 @@ const StudentSuccessEcosystem = () => {
                 />
                 <text
                   x="400"
-                  y="400"
+                  y="408"
                   textAnchor="middle"
                   fill="white"
                   fontSize="16"
