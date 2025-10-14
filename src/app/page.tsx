@@ -437,7 +437,7 @@ const StudentSuccessEcosystem = () => {
                   cx="400"
                   cy="400"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
-                  fill="#7C3AED"
+                  fill="#555555"
                   opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
@@ -452,7 +452,7 @@ const StudentSuccessEcosystem = () => {
                 />
                 <text
                   x="400"
-                  y="324"
+                  y="400"
                   textAnchor="middle"
                   fill="white"
                   fontSize="16"
