@@ -186,7 +186,7 @@ const StudentSuccessEcosystem = () => {
     return (
       <g key={`${domain.id}-${intrinsic}`}>
         <defs>
-          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id={gradientId} x1={intrinsicX} y1={intrinsicY} x2={domainX} y2={domainY}>
             <stop offset="0%" stopColor={intrinsicInfo.color} stopOpacity={opacity} />
             <stop offset="100%" stopColor={domain.color} stopOpacity={opacity} />
           </linearGradient>
@@ -197,7 +197,7 @@ const StudentSuccessEcosystem = () => {
           x2={domainX}
           y2={domainY}
           stroke={`url(#${gradientId})`}
-          strokeWidth={strength / 20}
+          strokeWidth={strength / 5}
           opacity={opacity}
           className="transition-all duration-300"
         />
