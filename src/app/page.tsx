@@ -1,6 +1,6 @@
 'use client'; 
 import React, { useState } from 'react';
-import { Info } from 'lucide-react';
+import { Info, X } from 'lucide-react';
 
 const StudentSuccessEcosystem = () => {
   const [selectedDomain, setSelectedDomain] = useState(null);
@@ -17,8 +17,8 @@ const StudentSuccessEcosystem = () => {
       id: 'academics',
       name: 'Academics',
       color: '#3B82F6',
-      angle: 292.5, //270
-      influences: { cognition: 90, mindset: 60, belonging: 40 },
+      angle: 292.5,
+      influences: { cognition: 100, mindset: 60, belonging: 40 },
       description: 'Academic performance, course engagement, and learning outcomes',
       example: 'Strong academic support helps students master content (Learning) and build confidence (Mindset)'
     },
@@ -26,8 +26,8 @@ const StudentSuccessEcosystem = () => {
       id: 'effectiveness',
       name: 'Effectiveness',
       color: '#8B5CF6',
-      angle: 247.5, //225
-      influences: { cognition: 70, mindset: 85, belonging: 30 },
+      angle: 247.5,
+      influences: { cognition: 60, mindset: 95, belonging: 20 },
       description: 'Time management, study skills, and organizational capabilities',
       example: 'Effective study strategies boost both learning capacity and student self-efficacy'
     },
@@ -35,8 +35,8 @@ const StudentSuccessEcosystem = () => {
       id: 'commitments',
       name: 'Managing Commitments',
       color: '#EC4899',
-      angle: 112.5, //90
-      influences: { cognition: 40, mindset: 80, belonging: 50 },
+      angle: 112.5,
+      influences: { cognition: 40, mindset: 90, belonging: 50 },
       description: 'Balancing school, work, family, and personal responsibilities',
       example: 'Successfully managing competing demands strengthens resilience and sense of control'
     },
@@ -44,7 +44,7 @@ const StudentSuccessEcosystem = () => {
       id: 'health',
       name: 'Health & Support',
       color: '#EF4444',
-      angle: 157.5, //135
+      angle: 157.5,
       influences: { cognition: 50, mindset: 75, belonging: 70 },
       description: 'Physical health, mental wellness, and access to support systems',
       example: 'Wellness resources and support networks foster both wellbeing and community connection'
@@ -53,7 +53,7 @@ const StudentSuccessEcosystem = () => {
       id: 'community',
       name: 'School Community',
       color: '#F59E0B',
-      angle: 67.5, //45
+      angle: 67.5,
       influences: { cognition: 45, mindset: 55, belonging: 95 },
       description: 'Peer connections, faculty relationships, and sense of institutional belonging',
       example: 'Active participation in university community directly strengthens sense of belonging and identity'
@@ -62,8 +62,8 @@ const StudentSuccessEcosystem = () => {
       id: 'commitment',
       name: 'Commitment to Graduation',
       color: '#10B981',
-      angle: 202.5, //180
-      influences: { cognition: 60, mindset: 90, belonging: 60 },
+      angle: 202.5,
+      influences: { cognition: 50, mindset: 100, belonging: 50 },
       description: 'Goal clarity, persistence, and dedication to degree completion',
       example: 'Clear goals and strong commitment fuel motivation and sustained effort through challenges'
     },
@@ -71,8 +71,8 @@ const StudentSuccessEcosystem = () => {
       id: 'finances',
       name: 'Finances',
       color: '#14B8A6',
-      angle: 22.5, //0
-      influences: { cognition: 55, mindset: 70, belonging: 45 },
+      angle: 22.5,
+      influences: { cognition: 55, mindset: 75, belonging: 50 },
       description: 'Financial aid, budgeting, and economic stability',
       example: 'Financial security reduces stress and enables focus on learning and growth'
     },
@@ -80,7 +80,7 @@ const StudentSuccessEcosystem = () => {
       id: 'career',
       name: 'Career',
       color: '#06B6D4',
-      angle: 337.5, //315
+      angle: 337.5,
       influences: { cognition: 75, mindset: 80, belonging: 55 },
       description: 'Career planning, professional development, and future opportunities',
       example: 'Career clarity and progress strengthen motivation and give learning immediate relevance'
@@ -130,6 +130,12 @@ const StudentSuccessEcosystem = () => {
     { name: 'Microsystem', radius: 180, color: '#B0A1D0', opacity: 0.55, width: 35 }
   ];
 
+  const clearSelection = () => {
+    setSelectedDomain(null);
+    setHoveredIntrinsic(null);
+    setTooltipIntrinsic(null);
+  };
+
   const getNeedNameById = (id) => {
     return intrinsicNeeds.find(item => item.id === id)?.name;
   };
@@ -139,11 +145,9 @@ const StudentSuccessEcosystem = () => {
     return domain.influences[intrinsic] || 0;
   };
 
-  const getAffectedDomains = (intrinsicId, level) => {
-    return focusWheelDomains.map(domain => ({
-      ...domain,
-      impact: (domain.influences[intrinsicId] / 100) * (level / 100)
-    }));
+  const hexToRgb = (hex) => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : "0, 0, 0";
   };
 
   const renderConnection = (domain, intrinsic) => {
@@ -153,14 +157,13 @@ const StudentSuccessEcosystem = () => {
     const centerX = 400;
     const centerY = 400;
     
-    // Calculate domain position
     const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
     const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
     const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
     const totalScore = cognitionScore + mindsetScore + belongingScore;
     const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
     const domainAlignment = totalScore / maxPossibleScore;
-    const radius = 350 - (domainAlignment * 180); //First number is Max Radius, Second number is Min Radius
+    const radius = 350 - (domainAlignment * 180);
     
     const angleRad = (domain.angle * Math.PI) / 180;
     const domainX = centerX + radius * Math.cos(angleRad);
@@ -177,19 +180,28 @@ const StudentSuccessEcosystem = () => {
     }
 
     const opacity = strength / 100;
+    const intrinsicInfo = intrinsicNeeds.find(n => n.id === intrinsic);
+    const gradientId = `gradient-${domain.id}-${intrinsic}`;
 
     return (
-      <line
-        key={`${domain.id}-${intrinsic}`}
-        x1={domainX}
-        y1={domainY}
-        x2={intrinsicX}
-        y2={intrinsicY}
-        stroke={domain.color}
-        strokeWidth={strength / 10}
-        opacity={opacity * 0.6}
-        className="transition-all duration-300"
-      />
+      <g key={`${domain.id}-${intrinsic}`}>
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor={intrinsicInfo.color} stopOpacity={opacity} />
+            <stop offset="100%" stopColor={domain.color} stopOpacity={opacity} />
+          </linearGradient>
+        </defs>
+        <line
+          x1={intrinsicX}
+          y1={intrinsicY}
+          x2={domainX}
+          y2={domainY}
+          stroke={`url(#${gradientId})`}
+          strokeWidth={strength / 20}
+          opacity={opacity}
+          className="transition-all duration-300"
+        />
+      </g>
     );
   };
 
@@ -216,7 +228,6 @@ const StudentSuccessEcosystem = () => {
               {/* Ecological Layers - Background */}
               {ecologicalLayers.map((layer, idx) => (
                 <g key={`layer-${idx}`}>
-                  {/* Circle */}
                   <circle
                     cx="400"
                     cy="400"
@@ -226,7 +237,6 @@ const StudentSuccessEcosystem = () => {
                     strokeWidth={layer.width}
                     opacity={layer.opacity}
                   />
-                  {/* Label */}
                   <text
                     x="400"
                     y={400 - layer.radius + layer.width / 2 - 15}
@@ -248,12 +258,11 @@ const StudentSuccessEcosystem = () => {
                 renderConnection(selectedDomain, intrinsic.id)
               )}
 
-              {/* Alignment lines and labels - drawn first so they appear behind domains */}
+              {/* Alignment lines and labels */}
               {focusWheelDomains.map(domain => {
                 const centerX = 400;
                 const centerY = 400;
                 
-                // Calculate alignment score (same as below)
                 const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
                 const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
                 const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
@@ -261,18 +270,16 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = (350 - 30) - (domainAlignment * 180); //First composite number is Max Radius (less domain circle radius), Second number is Min Radius
+                const radius = (350 - 30) - (domainAlignment * 180);
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
                 
-                // Calculate percentile point for label placement
-                const midX = centerX + (radius * 0.9) * Math.cos(angleRad);
-                const midY = centerY + (radius * 0.9) * Math.sin(angleRad);
+                const midX = centerX + (radius * 0.85) * Math.cos(angleRad);
+                const midY = centerY + (radius * 0.85) * Math.sin(angleRad);
                 
                 return (
                   <g key={`alignment-${domain.id}`}>
-                    {/* Dashed line from domain to center */}
                     <line
                       x1={x}
                       y1={y}
@@ -283,7 +290,6 @@ const StudentSuccessEcosystem = () => {
                       strokeDasharray="5,5"
                       opacity="0.4"
                     />
-                    {/* Alignment score label */}
                     <g>
                       <rect
                         x={midX - 25}
@@ -314,23 +320,15 @@ const StudentSuccessEcosystem = () => {
                 const centerX = 400;
                 const centerY = 400;
                 
-                // Calculate weighted alignment between domain influences and intrinsic levels
-                // Each domain's influences are values (0-100) indicating how much that domain affects each intrinsic need
-                // Multiply domain influence strength by current intrinsic level
                 const cognitionScore = domain.influences.cognition * intrinsicLevels.cognition;
                 const mindsetScore = domain.influences.mindset * intrinsicLevels.mindset;
                 const belongingScore = domain.influences.belonging * intrinsicLevels.belonging;
                 
-                // Sum the scores
                 const totalScore = cognitionScore + mindsetScore + belongingScore;
                 
-                // Normalize based on THIS domain's maximum possible score
-                // Max occurs when all intrinsic levels are 100
                 const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
-                const domainAlignment = totalScore / maxPossibleScore; // Normalize to 0-1 range
+                const domainAlignment = totalScore / maxPossibleScore;
                 
-                // Dynamic radius: stronger alignment = closer to center
-                // Range from 180 (very close) to 350 (far away)
                 const minRadius = 180;
                 const maxRadius = 350;
                 const radius = maxRadius - (domainAlignment * (maxRadius - minRadius));
@@ -375,7 +373,6 @@ const StudentSuccessEcosystem = () => {
 
               {/* Learning Triangle */}
               <g>
-                {/* Triangle outline: old coordinates: 400,280 330,440 470,440 */}
                 <polygon
                   points="400,319 330,440 470,440"
                   fill="none"
@@ -509,6 +506,17 @@ const StudentSuccessEcosystem = () => {
 
           {/* Control Panel & Info */}
           <div className="space-y-6">
+            {/* Clear Button */}
+            {(selectedDomain || hoveredIntrinsic || tooltipIntrinsic) && (
+              <button
+                onClick={clearSelection}
+                className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-md"
+              >
+                <X size={18} />
+                Clear Selection
+              </button>
+            )}
+
             {/* Intrinsic Level Controls */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
