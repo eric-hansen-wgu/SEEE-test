@@ -160,7 +160,7 @@ const StudentSuccessEcosystem = () => {
     const totalScore = cognitionScore + mindsetScore + belongingScore;
     const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
     const domainAlignment = totalScore / maxPossibleScore;
-    const radius = 350 - (domainAlignment * (180 - 40)); //First number is Max Radius, Second number is Min Radius, Third Number accounts for radius of the Focus Wheel Domain
+    const radius = 350 - (domainAlignment * (180 + 40)); //First number is Max Radius, Second number is Min Radius, Third Number accounts for radius of the Focus Wheel Domain
     
     const angleRad = (domain.angle * Math.PI) / 180;
     const domainX = centerX + radius * Math.cos(angleRad);
@@ -261,7 +261,7 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = 350 - (domainAlignment * (180 - 40)); //First number is Max Radius, Second number is Min Radius, Third Number accounts for radius of the Focus Wheel Domain
+                const radius = 350 - (domainAlignment * (180 + 40)); //First number is Max Radius, Second number is Min Radius, Third Number accounts for radius of the Focus Wheel Domain
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
