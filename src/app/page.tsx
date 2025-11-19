@@ -122,6 +122,14 @@ const StudentSuccessEcosystem = () => {
     }
   ];
 
+  const ecologicalLayers = [
+    { name: 'Chronosystem', radius: 350, color: '#E0D5F0', opacity: 0.3, width: 22 },
+    { name: 'Macrosystem', radius: 323, color: '#D4C8E8', opacity: 0.4, width: 22 },
+    { name: 'Exosystem', radius: 296, color: '#C8BBE0', opacity: 0.45, width: 22 },
+    { name: 'Mesosystem', radius: 274, color: '#BCAED8', opacity: 0.5, width: 22 },
+    { name: 'Microsystem', radius: 248, color: '#B0A1D0', opacity: 0.55, width: 22 }
+  ];
+
   const getNeedNameById = (id) => {
     return intrinsicNeeds.find(item => item.id === id)?.name;
   };
@@ -197,7 +205,7 @@ const StudentSuccessEcosystem = () => {
             Student Experience Ecosystem Explorer
           </h1>
           <p className="text-left text-sm font-medium text-slate-700 mb-3">
-            The Learning Triangle and the Focus Wheel models form a mutually reinforcing ecosystem. The Focus Wheel visualizes the outer (or extrinsic) experience of the learner’s environment, while the Learning Triangle represents the inner experience of learning itself. Together, they operate as a bi-directional system — where intrinsic states shape extrinsic outcomes, and extrinsic supports restore or strengthen intrinsic capacities. Use the tool below to explore how intrinsic learner needs and extrinsic support domains dynamically interact in the WGU student experience model.
+            The Learning Triangle and the Focus Wheel models form a mutually reinforcing ecosystem. The Focus Wheel visualizes the outer (or extrinsic) experience of the learner's environment, while the Learning Triangle represents the inner experience of learning itself. Together, they operate as a bi-directional system — where intrinsic states shape extrinsic outcomes, and extrinsic supports restore or strengthen intrinsic capacities. Use the tool below to explore how intrinsic learner needs and extrinsic support domains dynamically interact in the WGU student experience model.
           </p>
         </header>
 
@@ -205,6 +213,36 @@ const StudentSuccessEcosystem = () => {
           {/* Main Visualization */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8">
             <svg viewBox="0 0 800 800" className="w-full h-full">
+              {/* Ecological Layers - Background */}
+              {ecologicalLayers.map((layer, idx) => (
+                <g key={`layer-${idx}`}>
+                  {/* Circle */}
+                  <circle
+                    cx="400"
+                    cy="400"
+                    r={layer.radius}
+                    fill="none"
+                    stroke={layer.color}
+                    strokeWidth={layer.width}
+                    opacity={layer.opacity}
+                  />
+                  {/* Label */}
+                  <text
+                    x="400"
+                    y={400 - layer.radius + layer.width / 2 }
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fill="#64748B"
+                    fontSize="14"
+                    fontWeight="600"
+                    opacity="0.6"
+                    className="pointer-events-none"
+                  >
+                    {layer.name}
+                  </text>
+                </g>
+              ))}
+
               {/* Connection lines */}
               {selectedDomain && intrinsicNeeds.map(intrinsic => 
                 renderConnection(selectedDomain, intrinsic.id)
@@ -600,7 +638,7 @@ const StudentSuccessEcosystem = () => {
 
         {/* Footer */}
         <footer className="mt-8 text-center text-sm text-slate-500">
-          <p>Based on a combination of the Learning Triangle and InsideTrack Focus Wheel models | Interactive Prototype Designed for Student Experience</p>
+          <p>Based on a combination of the Learning Triangle, InsideTrack Focus Wheel, and Bronfenbrenner's Ecological Systems Theory | Interactive Prototype Designed for Student Experience</p>
         </footer>
       </div>
     </div>
