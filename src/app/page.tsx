@@ -261,7 +261,7 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = (350 - 40) - (domainAlignment * 180); //First composite number is Max Radius (less domain circle radius), Second number is Min Radius
+                const radius = (350 - 30) - (domainAlignment * 180); //First composite number is Max Radius (less domain circle radius), Second number is Min Radius
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
