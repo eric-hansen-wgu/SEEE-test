@@ -126,7 +126,7 @@ const StudentSuccessEcosystem = () => {
     { name: 'Chronosystem', radius: 350, color: '#E0D5F0', opacity: 0.3, width: 35 },
     { name: 'Macrosystem', radius: 306, color: '#D4C8E8', opacity: 0.4, width: 35 },
     { name: 'Exosystem', radius: 262, color: '#C8BBE0', opacity: 0.45, width: 35 },
-    { name: 'Mesosystem', radius: 221, color: '#BCAED8', opacity: 0.5, width: 35 },
+    { name: 'Mesosystem', radius: 221, color: '#BCAED8', opacity: 0.5, width: 30 },
     { name: 'Microsystem', radius: 180, color: '#B0A1D0', opacity: 0.55, width: 35 }
   ];
 
@@ -229,7 +229,7 @@ const StudentSuccessEcosystem = () => {
                   {/* Label */}
                   <text
                     x="400"
-                    y={400 - layer.radius + layer.width / 2 - 8}
+                    y={400 - layer.radius + layer.width / 2 - 15}
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fill="#64748B"
