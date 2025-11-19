@@ -261,7 +261,7 @@ const StudentSuccessEcosystem = () => {
                 const maxPossibleScore = (domain.influences.cognition + domain.influences.mindset + domain.influences.belonging) * 100;
                 const domainAlignment = totalScore / maxPossibleScore;
                 
-                const radius = 325 - (domainAlignment * 120);
+                const radius = 350 - (domainAlignment * 180); //First number is Max Radius, Second number is Min Radius
                 const angleRad = (domain.angle * Math.PI) / 180;
                 const x = centerX + radius * Math.cos(angleRad);
                 const y = centerY + radius * Math.sin(angleRad);
@@ -480,7 +480,7 @@ const StudentSuccessEcosystem = () => {
                   cy="400"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
                   fill="#555555"
-                  opacity={hoveredIntrinsic === 'learning' ? 0.85 : 0.4}
+                  opacity={hoveredIntrinsic === 'learning' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
                   onMouseEnter={() => {
                     setHoveredIntrinsic('learning');
@@ -513,7 +513,7 @@ const StudentSuccessEcosystem = () => {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
                 <Info size={20} />
-                Adjust Intrinsic Levels
+                Adjust Intrinsic Needs Levels
               </h3>
               <div className="space-y-4">
                 {intrinsicNeeds.map(need => (
