@@ -17,7 +17,7 @@ const StudentSuccessEcosystem = () => {
       id: 'academics',
       name: 'Academics',
       color: '#3B82F6',
-      angle: 270,
+      angle: 292.5, //270
       influences: { cognition: 90, mindset: 60, belonging: 40 },
       description: 'Academic performance, course engagement, and learning outcomes',
       example: 'Strong academic support helps students master content (Learning) and build confidence (Mindset)'
@@ -26,7 +26,7 @@ const StudentSuccessEcosystem = () => {
       id: 'effectiveness',
       name: 'Effectiveness',
       color: '#8B5CF6',
-      angle: 225,
+      angle: 247.5, //225
       influences: { cognition: 70, mindset: 85, belonging: 30 },
       description: 'Time management, study skills, and organizational capabilities',
       example: 'Effective study strategies boost both learning capacity and student self-efficacy'
@@ -35,7 +35,7 @@ const StudentSuccessEcosystem = () => {
       id: 'commitments',
       name: 'Managing Commitments',
       color: '#EC4899',
-      angle: 90,
+      angle: 112.5, //90
       influences: { cognition: 40, mindset: 80, belonging: 50 },
       description: 'Balancing school, work, family, and personal responsibilities',
       example: 'Successfully managing competing demands strengthens resilience and sense of control'
@@ -44,7 +44,7 @@ const StudentSuccessEcosystem = () => {
       id: 'health',
       name: 'Health & Support',
       color: '#EF4444',
-      angle: 135,
+      angle: 157.5, //135
       influences: { cognition: 50, mindset: 75, belonging: 70 },
       description: 'Physical health, mental wellness, and access to support systems',
       example: 'Wellness resources and support networks foster both wellbeing and community connection'
@@ -53,7 +53,7 @@ const StudentSuccessEcosystem = () => {
       id: 'community',
       name: 'School Community',
       color: '#F59E0B',
-      angle: 45,
+      angle: 67.5, //45
       influences: { cognition: 45, mindset: 55, belonging: 95 },
       description: 'Peer connections, faculty relationships, and sense of institutional belonging',
       example: 'Active participation in university community directly strengthens sense of belonging and identity'
@@ -62,7 +62,7 @@ const StudentSuccessEcosystem = () => {
       id: 'commitment',
       name: 'Commitment to Graduation',
       color: '#10B981',
-      angle: 180,
+      angle: 202.5, //180
       influences: { cognition: 60, mindset: 90, belonging: 60 },
       description: 'Goal clarity, persistence, and dedication to degree completion',
       example: 'Clear goals and strong commitment fuel motivation and sustained effort through challenges'
@@ -71,7 +71,7 @@ const StudentSuccessEcosystem = () => {
       id: 'finances',
       name: 'Finances',
       color: '#14B8A6',
-      angle: 0,
+      angle: 22.5, //0
       influences: { cognition: 55, mindset: 70, belonging: 45 },
       description: 'Financial aid, budgeting, and economic stability',
       example: 'Financial security reduces stress and enables focus on learning and growth'
@@ -80,7 +80,7 @@ const StudentSuccessEcosystem = () => {
       id: 'career',
       name: 'Career',
       color: '#06B6D4',
-      angle: 315,
+      angle: 337.5, //315
       influences: { cognition: 75, mindset: 80, belonging: 55 },
       description: 'Career planning, professional development, and future opportunities',
       example: 'Career clarity and progress strengthen motivation and give learning immediate relevance'
@@ -267,8 +267,8 @@ const StudentSuccessEcosystem = () => {
                 const y = centerY + radius * Math.sin(angleRad);
                 
                 // Calculate percentile point for label placement
-                const midX = centerX + (radius * 0.66) * Math.cos(angleRad);
-                const midY = centerY + (radius * 0.66) * Math.sin(angleRad);
+                const midX = centerX + (radius * 0.9) * Math.cos(angleRad);
+                const midY = centerY + (radius * 0.9) * Math.sin(angleRad);
                 
                 return (
                   <g key={`alignment-${domain.id}`}>
