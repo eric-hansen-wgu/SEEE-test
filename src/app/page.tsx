@@ -207,6 +207,7 @@ const StudentSuccessEcosystem = () => {
     const opacity = strength / 100;
     const intrinsicInfo = intrinsicNeeds.find(n => n.id === intrinsic);
     const gradientId = `gradient-${domain.id}-${intrinsic}`;
+    const gradientAngle = getAngleDegrees(intrinsicX, intrinsicY, domainX, domainY, true);
 
     return (
       <g key={`${domain.id}-${intrinsic}`}>
@@ -217,7 +218,7 @@ const StudentSuccessEcosystem = () => {
             y1="0%" 
             x2="100%" 
             y2="0%" 
-            grandientTransform={`rotate(${domain.angle})`}
+            gradientTransform={`rotate(${gradientAngle})`}
             >
             <stop 
               offset="0%" 
