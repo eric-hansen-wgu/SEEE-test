@@ -150,9 +150,34 @@ const StudentSuccessEcosystem = () => {
     return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : "0, 0, 0";
   };
 
+  const getAngleDegrees = (
+    x1: number, 
+    y1: number, 
+    x2: number, 
+    y2: number, 
+    normalize: boolean = false
+  ): number => {
+      // Calculate delta x and delta y
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+  
+      // 1. Calculate angle in radians (-PI to PI) using Math.atan2 for quadrant safety
+      const angleRad = Math.atan2(dy, dx); 
+  
+      // 2. Convert radians to degrees: angle * (180 / PI)
+      let degrees = angleRad * (180 / Math.PI); 
+  
+      // 3. Optional: Normalize to the [0, 360) range
+      if (normalize && degrees < 0) {
+          degrees += 360;
+      }
+  
+      return degrees;
+  };
+
   const renderConnection = (domain, intrinsic) => {
     const strength = getConnectionStrength(domain, intrinsic);
-    if (strength < 30) return null;
+    if (strength < 5) return null;
 
     const centerX = 400;
     const centerY = 400;
@@ -186,9 +211,24 @@ const StudentSuccessEcosystem = () => {
     return (
       <g key={`${domain.id}-${intrinsic}`}>
         <defs>
-          <linearGradient id={gradientId} x1="0%" y1="0%" x2="55%" y2="55%" grandientTransform="rotate(35)">
-            <stop offset="0%" stopColor={intrinsicInfo.color} stopOpacity={opacity} />
-            <stop offset="100%" stopColor={domain.color} stopOpacity={opacity} />
+          <linearGradient 
+            id={gradientId} 
+            x1="0%" 
+            y1="0%" 
+            x2="100%" 
+            y2="0%" 
+            grandientTransform={`rotate(${domain.angle})`}
+            >
+            <stop 
+              offset="0%" 
+              stopColor={intrinsicInfo.color} 
+              stopOpacity="0.4" //set to match the non-hover opacity of the learning triangle component
+            />
+            <stop 
+              offset="100%" 
+              stopColor={domain.color} 
+              stopOpacity="1" //set to match the hovered opacity of the focus wheel domain circle
+            />
           </linearGradient>
         </defs>
         <line
@@ -196,9 +236,9 @@ const StudentSuccessEcosystem = () => {
           y1={intrinsicY}
           x2={domainX}
           y2={domainY}
-          stroke={intrinsicInfo.color} //{`url(#${gradientId})`}
+          stroke={`url(#${gradientId})`} //{intrinsicInfo.color}
           strokeWidth={strength / 5}
-          opacity="0.5" //{opacity}
+          opacity="1" //{opacity}
           className="transition-all duration-300"
         />
       </g>
