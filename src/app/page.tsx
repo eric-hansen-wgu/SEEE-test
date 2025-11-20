@@ -218,7 +218,7 @@ const StudentSuccessEcosystem = () => {
             y1="0%" 
             x2="100%" 
             y2="0%" 
-            gradientTransform={`rotate(${gradientAngle})`}
+            gradientTransform={`rotate(${gradientAngle}, .5, .5)`}
             >
             <stop 
               offset="0%" 
