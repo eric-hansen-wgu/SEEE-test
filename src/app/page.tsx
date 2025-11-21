@@ -115,10 +115,10 @@ const StudentSuccessEcosystem = () => {
     },
     { 
       id: 'learning', 
-      name: 'Learner', 
+      name: 'Learning', 
       color: '#252627', 
       position: 'middle',
-      description: 'The center of our focus is the student learner; a successful culmination of all ecological components to change lives through providing personalized pathways to education.',
+      description: 'The successful culmination of all components to drive the mission and outcome of WGU',
       context: 'Learning is conditionally irrespective interpretation of juxtaposed, competing, or remixed methods, definitions, philosophies, frameworks, and/or contexts by which to choose a superior way of knowing, working, behaving, and/or thinking.'
     }
   ];
@@ -172,13 +172,11 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.55,
       width: 35,
       description: 'The microsystem is the innermost layer and includes the immediate environments that an individual interacts with directly.', 
-      context: `•	Family: Parents, siblings, and extended family members who provide care and socialization.
-      <br />•	School: Teachers and classmates that contribute to learning and social experiences.
-      <br />•	Peers: Friends and playmates who influence social skills and behaviors.
-      <br />•	Neighborhood: The local community and its resources, safety, and social norms. 
-      <br /><br />Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.`
+      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization.<br />•	School: Teachers and classmates that contribute to learning and social experiences.<br />•	Peers: Friends and playmates who influence social skills and behaviors.<br />•	Neighborhood: The local community and its resources, safety, and social norms.<br /><br />Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
     }
   ];
+
+  // --- NEW HANDLER FUNCTIONS TO ENSURE MUTUAL EXCLUSIVITY ---
 
   const handleLayerClick = (layerId) => {
     if (tooltipLayer === layerId) {
@@ -224,6 +222,10 @@ const StudentSuccessEcosystem = () => {
 
   const getNeedNameById = (id) => {
     return intrinsicNeeds.find(item => item.id === id)?.name;
+  };
+
+  const getNeedColorById = (id) => {
+    return intrinsicNeeds.find(item => item.id === id)?.color;
   };
    
   const getConnectionStrength = (domain, intrinsic) => {
@@ -514,7 +516,7 @@ const StudentSuccessEcosystem = () => {
                   cx="400"
                   cy="319"
                   r={hoveredIntrinsic === 'cognition' ? 55 : 45}
-                  fill="#00a6ed"
+                  fill={getNeedColorById('cognition')}
                   opacity={hoveredIntrinsic === 'cognition' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   // UPDATED CLICK HANDLER
@@ -537,7 +539,7 @@ const StudentSuccessEcosystem = () => {
                   cx="330"
                   cy="440"
                   r={hoveredIntrinsic === 'mindset' ? 55 : 45}
-                  fill="#7fb800"
+                  fill={getNeedColorById('mindset')}
                   opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   // UPDATED CLICK HANDLER
@@ -560,7 +562,7 @@ const StudentSuccessEcosystem = () => {
                   cx="470"
                   cy="440"
                   r={hoveredIntrinsic === 'belonging' ? 55 : 45}
-                  fill="#b80c09"
+                  fill={getNeedColorById('belonging')}
                   opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
                   // UPDATED CLICK HANDLER
@@ -583,7 +585,7 @@ const StudentSuccessEcosystem = () => {
                   cx="400"
                   cy="400"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
-                  fill="#252627"
+                  fill={getNeedColorById('learning')}
                   opacity={hoveredIntrinsic === 'learning' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
                   // UPDATED CLICK HANDLER
@@ -670,6 +672,7 @@ const StudentSuccessEcosystem = () => {
             )}
 
             {/* Intrinsic Need Tooltip */}
+            {/* Removed !tooltipLayer check to simplify logic now that state is exclusive */}
             {tooltipIntrinsic && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
@@ -691,6 +694,7 @@ const StudentSuccessEcosystem = () => {
             )}
 
             {/* Domain Info Card */}
+            {/* Removed !tooltipLayer and !tooltipIntrinsic checks */}
             {selectedDomain && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
