@@ -11,6 +11,7 @@ const StudentSuccessEcosystem = () => {
   });
   const [hoveredIntrinsic, setHoveredIntrinsic] = useState(null);
   const [tooltipIntrinsic, setTooltipIntrinsic] = useState(null);
+  const [tooltipLayer, setTooltipLayer] = useState(null);
 
   const focusWheelDomains = [
     {
@@ -90,7 +91,7 @@ const StudentSuccessEcosystem = () => {
   const intrinsicNeeds = [
     { 
       id: 'cognition', 
-      name: 'Cognition', 
+      name: 'Thought', 
       color: '#7C3AED', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
@@ -151,7 +152,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.45,
       width: 35,
       description: 'The exosystem includes external environmental settings that indirectly influence the individual.',
-      context: '•	Community resources: Such as local health services, schools, and recreational facilities. •	Parental workplace: The work environment of parents can affect family dynamics and resources available to children. •	Local policies: Decisions made at the community or governmental level that impact the individual’s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
+      context: '•	Community resources: Such as local health services, schools, and recreational facilities. •	Parental workplace: The work environment of parents can affect family dynamics and resources available to children. •	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
     },
     { 
       id: 'mesosystem',
@@ -179,6 +180,7 @@ const StudentSuccessEcosystem = () => {
     setSelectedDomain(null);
     setHoveredIntrinsic(null);
     setTooltipIntrinsic(null);
+    setTooltipLayer(null);
   };
 
   const getNeedNameById = (id) => {
@@ -295,6 +297,10 @@ const StudentSuccessEcosystem = () => {
     return intrinsicNeeds.find(need => need.id === intrinsicId);
   };
 
+  const getLayerInfo = (layerId) => {
+    return ecologicalLayers.find(layer => layer.id === layerId);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8">
       <div className="max-w-7xl mx-auto">
@@ -332,9 +338,8 @@ const StudentSuccessEcosystem = () => {
                     fontSize="14"
                     fontWeight="600"
                     opacity="0.6"
-                    className="pointer-events-none"
-                    //onClick={() => setTooltipLayer(tooltipLayer === layer.id ? null : layer.id)}
-                    onClick={() => alert(layer.description)}
+                    className="cursor-pointer hover:opacity-100 transition-opacity"
+                    onClick={() => setTooltipLayer(tooltipLayer === layer.id ? null : layer.id)}
                   >
                     {layer.name}
                   </text>
@@ -595,7 +600,7 @@ const StudentSuccessEcosystem = () => {
           {/* Control Panel & Info */}
           <div className="space-y-6">
             {/* Clear Button */}
-            {(selectedDomain || hoveredIntrinsic || tooltipIntrinsic) && (
+            {(selectedDomain || hoveredIntrinsic || tooltipIntrinsic || tooltipLayer) && (
               <button
                 onClick={clearSelection}
                 className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-md"
@@ -638,8 +643,29 @@ const StudentSuccessEcosystem = () => {
               </div>
             </div>
 
+            {/* Ecological Layer Tooltip */}
+            {tooltipLayer && (
+              <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
+                <div 
+                  className="w-full h-2 rounded-full mb-4"
+                  style={{ backgroundColor: getLayerInfo(tooltipLayer).color }}
+                />
+                <h3 className="text-xl font-bold text-slate-800 mb-2">
+                  {getLayerInfo(tooltipLayer).name}
+                </h3>
+                <p className="text-sm font-medium text-slate-700 mb-3">
+                  {getLayerInfo(tooltipLayer).description}
+                </p>
+                <div className="bg-slate-50 rounded-lg p-4">
+                  <p className="text-sm text-slate-700">
+                    {getLayerInfo(tooltipLayer).context}
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* Intrinsic Need Tooltip */}
-            {tooltipIntrinsic && (
+            {tooltipIntrinsic && !tooltipLayer && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
                   className="w-full h-2 rounded-full mb-4"
@@ -660,7 +686,7 @@ const StudentSuccessEcosystem = () => {
             )}
 
             {/* Domain Info Card */}
-            {selectedDomain && !tooltipIntrinsic && (
+            {selectedDomain && !tooltipIntrinsic && !tooltipLayer && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
                   className="w-full h-2 rounded-full mb-4"
@@ -715,7 +741,7 @@ const StudentSuccessEcosystem = () => {
             )}
 
             {/* Instructions */}
-            {!selectedDomain && !tooltipIntrinsic && (
+            {!selectedDomain && !tooltipIntrinsic && !tooltipLayer && (
               <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">
                   How to Explore
@@ -723,6 +749,7 @@ const StudentSuccessEcosystem = () => {
                 <ul className="text-sm text-blue-800 space-y-2">
                   <li>• Click or hover on any Focus Wheel domain to see connections</li>
                   <li>• Hover over Learning Triangle elements for context</li>
+                  <li>• Click on ecological layer labels for system information</li>
                   <li>• Adjust intrinsic level sliders to simulate system changes</li>
                   <li>• Watch domains move closer/farther based on alignment</li>
                   <li>• Line thickness and % labels show connection strength</li>
