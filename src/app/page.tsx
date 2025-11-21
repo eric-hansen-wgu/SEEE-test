@@ -115,10 +115,10 @@ const StudentSuccessEcosystem = () => {
     },
     { 
       id: 'learning', 
-      name: 'Learning', 
+      name: 'Learner', 
       color: '#252627', 
       position: 'middle',
-      description: 'The successful culmination of all components to drive the mission and outcome of WGU',
+      description: 'The center of our focus is the student learner; a successful culmination of all ecological components to change lives through providing personalized pathways to education.',
       context: 'Learning is conditionally irrespective interpretation of juxtaposed, competing, or remixed methods, definitions, philosophies, frameworks, and/or contexts by which to choose a superior way of knowing, working, behaving, and/or thinking.'
     }
   ];
@@ -132,7 +132,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.3, 
       width: 35,
       description: 'The chronosystem adds a temporal dimension to the ecological model, considering how changes over time affect development. ',
-      context: '•	Life transitions: Such as moving to a new city, changing schools, or family changes like divorce.<br />•	Historical events: Major societal changes, such as economic recessions or technological advancements, that can influence individual experiences and development. The chronosystem emphasizes that development is not static but evolves over time in response to various influences.'
+      context: '•	Life transitions: Such as moving to a new city, changing schools, or family changes like divorce.<br />•	Historical events: Major societal changes, such as economic recessions or technological advancements, that can influence individual experiences and development.<br /><br />The chronosystem emphasizes that development is not static but evolves over time in response to various influences.'
     },
     { 
       id: 'macrosystem', 
@@ -142,7 +142,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.4, 
       width: 35,
       description: 'The macrosystem encompasses the broader cultural and societal contexts that influence development.',
-      context: '•	Cultural values: Norms and beliefs that shape behaviors and expectations.<br />•	Economic conditions: The overall economic environment that can affect access to resources and opportunities.<br />•	Political systems: Laws and policies that govern society and impact individual lives. The macrosystem provides the overarching framework within which the other systems operate.'
+      context: '•	Cultural values: Norms and beliefs that shape behaviors and expectations.<br />•	Economic conditions: The overall economic environment that can affect access to resources and opportunities.<br />•	Political systems: Laws and policies that govern society and impact individual lives.<br /><br />The macrosystem provides the overarching framework within which the other systems operate.'
     },
     { 
       id: 'exosystem',
@@ -152,7 +152,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.45,
       width: 35,
       description: 'The exosystem includes external environmental settings that indirectly influence the individual.',
-      context: '•	Community resources: Such as local health services, schools, and recreational facilities.<br />•	Parental workplace: The work environment of parents can affect family dynamics and resources available to children.<br />•	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
+      context: '•	Community resources: Such as local health services, schools, and recreational facilities.<br />•	Parental workplace: The work environment of parents can affect family dynamics and resources available to children.<br />•	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment.<br /><br />While individuals may not interact directly with these systems, they still have a significant impact on their development.'
     },
     { 
       id: 'mesosystem',
@@ -162,7 +162,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.5,
       width: 30,
       description: 'The mesosystem refers to the connections and interactions between different microsystems.', 
-      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance.<br />•	Interactions between peer groups and family, which can influence family dynamics.<br />•	The connection between the neighborhood and school, where community resources can impact educational opportunities. The mesosystem highlights the importance of supportive relationships across different environments.'
+      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance.<br />•	Interactions between peer groups and family, which can influence family dynamics.<br />•	The connection between the neighborhood and school, where community resources can impact educational opportunities.<br /><br />The mesosystem highlights the importance of supportive relationships across different environments.'
     },
     { 
       id: 'microsystem',
@@ -172,9 +172,48 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.55,
       width: 35,
       description: 'The microsystem is the innermost layer and includes the immediate environments that an individual interacts with directly.', 
-      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization.<br />•	School: Teachers and classmates that contribute to learning and social experiences.<br />•	Peers: Friends and playmates who influence social skills and behaviors.<br />•	Neighborhood: The local community and its resources, safety, and social norms. Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
+      context: `•	Family: Parents, siblings, and extended family members who provide care and socialization.
+      <br />•	School: Teachers and classmates that contribute to learning and social experiences.
+      <br />•	Peers: Friends and playmates who influence social skills and behaviors.
+      <br />•	Neighborhood: The local community and its resources, safety, and social norms. 
+      <br /><br />Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.`
     }
   ];
+
+  const handleLayerClick = (layerId) => {
+    if (tooltipLayer === layerId) {
+      setTooltipLayer(null);
+    } else {
+      // Activate Layer, clear others
+      setTooltipLayer(layerId);
+      setTooltipIntrinsic(null);
+      setSelectedDomain(null);
+    }
+  };
+
+  const handleIntrinsicClick = (intrinsicId) => {
+    if (tooltipIntrinsic === intrinsicId) {
+      setTooltipIntrinsic(null);
+    } else {
+      // Activate Intrinsic, clear others
+      setTooltipIntrinsic(intrinsicId);
+      setTooltipLayer(null);
+      setSelectedDomain(null);
+    }
+  };
+
+  const handleDomainClick = (domain) => {
+    if (selectedDomain?.id === domain.id) {
+      setSelectedDomain(null);
+    } else {
+      // Activate Domain, clear others
+      setSelectedDomain(domain);
+      setTooltipIntrinsic(null);
+      setTooltipLayer(null);
+    }
+  };
+
+  // ---------------------------------------------------------
 
   const clearSelection = () => {
     setSelectedDomain(null);
@@ -186,7 +225,7 @@ const StudentSuccessEcosystem = () => {
   const getNeedNameById = (id) => {
     return intrinsicNeeds.find(item => item.id === id)?.name;
   };
-  
+   
   const getConnectionStrength = (domain, intrinsic) => {
     if (!domain || !intrinsic) return 0;
     return domain.influences[intrinsic] || 0;
@@ -204,21 +243,16 @@ const StudentSuccessEcosystem = () => {
     y2: number, 
     normalize: boolean = false
   ): number => {
-      // Calculate delta x and delta y
       const dx = x2 - x1;
       const dy = y2 - y1;
-  
-      // 1. Calculate angle in radians (-PI to PI) using Math.atan2 for quadrant safety
+   
       const angleRad = Math.atan2(dy, dx); 
-  
-      // 2. Convert radians to degrees: angle * (180 / PI)
       let degrees = angleRad * (180 / Math.PI); 
-  
-      // 3. Optional: Normalize to the [0, 360) range
+   
       if (normalize && degrees < 0) {
           degrees += 360;
       }
-  
+   
       return degrees;
   };
 
@@ -270,12 +304,12 @@ const StudentSuccessEcosystem = () => {
             <stop 
               offset="0%" 
               stopColor={intrinsicInfo.color} 
-              stopOpacity="0.4" //set to match the non-hover opacity of the learning triangle component
+              stopOpacity="0.4" 
             />
             <stop 
               offset="100%" 
               stopColor={domain.color} 
-              stopOpacity="1" //set to match the hovered opacity of the focus wheel domain circle
+              stopOpacity="1" 
             />
           </linearGradient>
         </defs>
@@ -284,9 +318,9 @@ const StudentSuccessEcosystem = () => {
           y1={intrinsicY}
           x2={domainX}
           y2={domainY}
-          stroke={`url(#${gradientId})`} //{intrinsicInfo.color}
+          stroke={`url(#${gradientId})`}
           strokeWidth={strength / 5}
-          opacity="1" //{opacity}
+          opacity="1"
           className="transition-all duration-300"
         />
       </g>
@@ -339,7 +373,8 @@ const StudentSuccessEcosystem = () => {
                     fontWeight="600"
                     opacity="0.6"
                     className="cursor-pointer hover:opacity-100 transition-opacity"
-                    onClick={() => setTooltipLayer(tooltipLayer === layer.id ? null : layer.id)}
+                    // UPDATED CLICK HANDLER
+                    onClick={() => handleLayerClick(layer.id)}
                   >
                     {layer.name}
                   </text>
@@ -440,8 +475,8 @@ const StudentSuccessEcosystem = () => {
                       fill={domain.color}
                       opacity={isSelected ? 1 : 0.8}
                       className="cursor-pointer transition-all duration-300 hover:opacity-100"
-                      onClick={() => setSelectedDomain(domain)}
-                      //onMouseEnter={() => setSelectedDomain(domain)}
+                      // UPDATED CLICK HANDLER
+                      onClick={() => handleDomainClick(domain)}
                     />
                     <text
                       x={x}
@@ -479,18 +514,11 @@ const StudentSuccessEcosystem = () => {
                   cx="400"
                   cy="319"
                   r={hoveredIntrinsic === 'cognition' ? 55 : 45}
-                  fill="#7C3AED"
+                  fill="#00a6ed"
                   opacity={hoveredIntrinsic === 'cognition' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  /* onMouseEnter={() => {
-                    setHoveredIntrinsic('cognition');
-                    setTooltipIntrinsic('cognition');
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredIntrinsic(null);
-                    setTooltipIntrinsic(null);
-                  }} */
-                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'cognition' ? null : 'cognition')}
+                  // UPDATED CLICK HANDLER
+                  onClick={() => handleIntrinsicClick('cognition')}
                 />
                 <text
                   x="400"
@@ -509,18 +537,11 @@ const StudentSuccessEcosystem = () => {
                   cx="330"
                   cy="440"
                   r={hoveredIntrinsic === 'mindset' ? 55 : 45}
-                  fill="#DC2626"
+                  fill="#7fb800"
                   opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  /* onMouseEnter={() => {
-                    setHoveredIntrinsic('mindset');
-                    setTooltipIntrinsic('mindset');
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredIntrinsic(null);
-                    setTooltipIntrinsic(null);
-                  }} */
-                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'mindset' ? null : 'mindset')}
+                  // UPDATED CLICK HANDLER
+                  onClick={() => handleIntrinsicClick('mindset')}
                 />
                 <text
                   x="330"
@@ -539,18 +560,11 @@ const StudentSuccessEcosystem = () => {
                   cx="470"
                   cy="440"
                   r={hoveredIntrinsic === 'belonging' ? 55 : 45}
-                  fill="#059669"
+                  fill="#b80c09"
                   opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  /* onMouseEnter={() => {
-                    setHoveredIntrinsic('belonging');
-                    setTooltipIntrinsic('belonging');
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredIntrinsic(null);
-                    setTooltipIntrinsic(null);
-                  }} */
-                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'belonging' ? null : 'belonging')}
+                  // UPDATED CLICK HANDLER
+                  onClick={() => handleIntrinsicClick('belonging')}
                 />
                 <text
                   x="470"
@@ -569,18 +583,11 @@ const StudentSuccessEcosystem = () => {
                   cx="400"
                   cy="400"
                   r={hoveredIntrinsic === 'learning' ? 55 : 45}
-                  fill="#555555"
+                  fill="#252627"
                   opacity={hoveredIntrinsic === 'learning' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  /* onMouseEnter={() => {
-                    setHoveredIntrinsic('learning');
-                    setTooltipIntrinsic('learning');
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredIntrinsic(null);
-                    setTooltipIntrinsic(null);
-                  }} */
-                  onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'learning' ? null : 'learning')}
+                  // UPDATED CLICK HANDLER
+                  onClick={() => handleIntrinsicClick('learning')}
                 />
                 <text
                   x="400"
@@ -657,15 +664,13 @@ const StudentSuccessEcosystem = () => {
                   {getLayerInfo(tooltipLayer).description}
                 </p>
                 <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="text-sm text-slate-700">
-                    {getLayerInfo(tooltipLayer).context}
-                  </p>
+                  <p className="text-sm text-slate-700" dangerouslySetInnerHTML={{__html: getLayerInfo(tooltipLayer).context}} />
                 </div>
               </div>
             )}
 
             {/* Intrinsic Need Tooltip */}
-            {tooltipIntrinsic && !tooltipLayer && (
+            {tooltipIntrinsic && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
                   className="w-full h-2 rounded-full mb-4"
@@ -686,7 +691,7 @@ const StudentSuccessEcosystem = () => {
             )}
 
             {/* Domain Info Card */}
-            {selectedDomain && !tooltipIntrinsic && !tooltipLayer && (
+            {selectedDomain && (
               <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
                 <div 
                   className="w-full h-2 rounded-full mb-4"
