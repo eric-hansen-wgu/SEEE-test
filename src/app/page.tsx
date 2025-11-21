@@ -17,7 +17,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'academics',
       name: 'Academics',
-      color: '#3B82F6',
+      color: '#6CACE4',//'#3B82F6',
       angle: 292.5,
       influences: { cognition: 100, mindset: 60, belonging: 40 },
       description: 'Academic performance, course engagement, and learning outcomes',
@@ -26,7 +26,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'effectiveness',
       name: 'Effectiveness',
-      color: '#8B5CF6',
+      color: '#7BAF9E',//'#8B5CF6',
       angle: 247.5,
       influences: { cognition: 60, mindset: 95, belonging: 20 },
       description: 'Time management, study skills, and organizational capabilities',
@@ -35,7 +35,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'commitments',
       name: 'Managing Commitments',
-      color: '#EC4899',
+      color: '#9BC53D',//'#EC4899',
       angle: 112.5,
       influences: { cognition: 40, mindset: 90, belonging: 50 },
       description: 'Balancing school, work, family, and personal responsibilities',
@@ -44,7 +44,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'health',
       name: 'Health & Support',
-      color: '#EF4444',
+      color: '#58A4B0',//'#EF4444',
       angle: 157.5,
       influences: { cognition: 50, mindset: 75, belonging: 70 },
       description: 'Physical health, mental wellness, and access to support systems',
@@ -53,7 +53,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'community',
       name: 'School Community',
-      color: '#F59E0B',
+      color: '#F4A300',//'#F59E0B',
       angle: 67.5,
       influences: { cognition: 45, mindset: 55, belonging: 95 },
       description: 'Peer connections, faculty relationships, and sense of institutional belonging',
@@ -62,7 +62,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'commitment',
       name: 'Commitment to Graduation',
-      color: '#10B981',
+      color: '#5B8E7D',//'#10B981',
       angle: 202.5,
       influences: { cognition: 50, mindset: 100, belonging: 50 },
       description: 'Goal clarity, persistence, and dedication to degree completion',
@@ -71,7 +71,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'finances',
       name: 'Finances',
-      color: '#14B8A6',
+      color: '#C4A000',//'#14B8A6',
       angle: 22.5,
       influences: { cognition: 55, mindset: 75, belonging: 50 },
       description: 'Financial aid, budgeting, and economic stability',
@@ -80,7 +80,7 @@ const StudentSuccessEcosystem = () => {
     {
       id: 'career',
       name: 'Career',
-      color: '#06B6D4',
+      color: '#7D6EB8',//'#06B6D4',
       angle: 337.5,
       influences: { cognition: 75, mindset: 80, belonging: 55 },
       description: 'Career planning, professional development, and future opportunities',
@@ -92,7 +92,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'cognition', 
       name: 'Thought', 
-      color: '#00a6ed', 
+      color: '#002855', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
       context: 'Thought (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
@@ -100,7 +100,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'mindset', 
       name: 'Volition', 
-      color: '#7fb800', 
+      color: '#007A33', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
       context: 'Volition (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
@@ -108,7 +108,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'belonging', 
       name: 'Feeling', 
-      color: '#b80c09', 
+      color: '#C8102E', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
       context: 'Feeling (a.k.a. Affection) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
@@ -116,7 +116,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'learning', 
       name: 'Learning', 
-      color: '#252627', 
+      color: '#001731', 
       position: 'middle',
       description: 'The successful culmination of all components to drive the mission and outcome of WGU',
       context: 'Learning is conditionally irrespective interpretation of juxtaposed, competing, or remixed methods, definitions, philosophies, frameworks, and/or contexts by which to choose a superior way of knowing, working, behaving, and/or thinking.'
