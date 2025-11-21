@@ -132,7 +132,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.3, 
       width: 35,
       description: 'The chronosystem adds a temporal dimension to the ecological model, considering how changes over time affect development. ',
-      context: '•	Life transitions: Such as moving to a new city, changing schools, or family changes like divorce. •	Historical events: Major societal changes, such as economic recessions or technological advancements, that can influence individual experiences and development. The chronosystem emphasizes that development is not static but evolves over time in response to various influences.'
+      context: '•	Life transitions: Such as moving to a new city, changing schools, or family changes like divorce.<br />•	Historical events: Major societal changes, such as economic recessions or technological advancements, that can influence individual experiences and development. The chronosystem emphasizes that development is not static but evolves over time in response to various influences.'
     },
     { 
       id: 'macrosystem', 
@@ -142,7 +142,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.4, 
       width: 35,
       description: 'The macrosystem encompasses the broader cultural and societal contexts that influence development.',
-      context: '•	Cultural values: Norms and beliefs that shape behaviors and expectations. •	Economic conditions: The overall economic environment that can affect access to resources and opportunities. •	Political systems: Laws and policies that govern society and impact individual lives. The macrosystem provides the overarching framework within which the other systems operate.'
+      context: '•	Cultural values: Norms and beliefs that shape behaviors and expectations.<br />•	Economic conditions: The overall economic environment that can affect access to resources and opportunities.<br />•	Political systems: Laws and policies that govern society and impact individual lives. The macrosystem provides the overarching framework within which the other systems operate.'
     },
     { 
       id: 'exosystem',
@@ -152,7 +152,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.45,
       width: 35,
       description: 'The exosystem includes external environmental settings that indirectly influence the individual.',
-      context: '•	Community resources: Such as local health services, schools, and recreational facilities. •	Parental workplace: The work environment of parents can affect family dynamics and resources available to children. •	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
+      context: '•	Community resources: Such as local health services, schools, and recreational facilities.<br />•	Parental workplace: The work environment of parents can affect family dynamics and resources available to children.<br />•	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
     },
     { 
       id: 'mesosystem',
@@ -162,7 +162,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.5,
       width: 30,
       description: 'The mesosystem refers to the connections and interactions between different microsystems.', 
-      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance. •	Interactions between peer groups and family, which can influence family dynamics. •	The connection between the neighborhood and school, where community resources can impact educational opportunities. The mesosystem highlights the importance of supportive relationships across different environments.'
+      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance.<br />•	Interactions between peer groups and family, which can influence family dynamics.<br />•	The connection between the neighborhood and school, where community resources can impact educational opportunities. The mesosystem highlights the importance of supportive relationships across different environments.'
     },
     { 
       id: 'microsystem',
@@ -172,7 +172,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.55,
       width: 35,
       description: 'The microsystem is the innermost layer and includes the immediate environments that an individual interacts with directly.', 
-      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization. •	School: Teachers and classmates that contribute to learning and social experiences. •	Peers: Friends and playmates who influence social skills and behaviors. •	Neighborhood: The local community and its resources, safety, and social norms. Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
+      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization.<br />•	School: Teachers and classmates that contribute to learning and social experiences.<br />•	Peers: Friends and playmates who influence social skills and behaviors.<br />•	Neighborhood: The local community and its resources, safety, and social norms. Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
     }
   ];
 
@@ -441,7 +441,7 @@ const StudentSuccessEcosystem = () => {
                       opacity={isSelected ? 1 : 0.8}
                       className="cursor-pointer transition-all duration-300 hover:opacity-100"
                       onClick={() => setSelectedDomain(domain)}
-                      onMouseEnter={() => setSelectedDomain(domain)}
+                      //onMouseEnter={() => setSelectedDomain(domain)}
                     />
                     <text
                       x={x}
@@ -482,14 +482,14 @@ const StudentSuccessEcosystem = () => {
                   fill="#7C3AED"
                   opacity={hoveredIntrinsic === 'cognition' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  onMouseEnter={() => {
+                  /* onMouseEnter={() => {
                     setHoveredIntrinsic('cognition');
                     setTooltipIntrinsic('cognition');
                   }}
                   onMouseLeave={() => {
                     setHoveredIntrinsic(null);
                     setTooltipIntrinsic(null);
-                  }}
+                  }} */
                   onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'cognition' ? null : 'cognition')}
                 />
                 <text
@@ -512,14 +512,14 @@ const StudentSuccessEcosystem = () => {
                   fill="#DC2626"
                   opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  onMouseEnter={() => {
+                  /* onMouseEnter={() => {
                     setHoveredIntrinsic('mindset');
                     setTooltipIntrinsic('mindset');
                   }}
                   onMouseLeave={() => {
                     setHoveredIntrinsic(null);
                     setTooltipIntrinsic(null);
-                  }}
+                  }} */
                   onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'mindset' ? null : 'mindset')}
                 />
                 <text
@@ -542,14 +542,14 @@ const StudentSuccessEcosystem = () => {
                   fill="#059669"
                   opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.4}
                   className="cursor-pointer transition-all duration-300"
-                  onMouseEnter={() => {
+                  /* onMouseEnter={() => {
                     setHoveredIntrinsic('belonging');
                     setTooltipIntrinsic('belonging');
                   }}
                   onMouseLeave={() => {
                     setHoveredIntrinsic(null);
                     setTooltipIntrinsic(null);
-                  }}
+                  }} */
                   onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'belonging' ? null : 'belonging')}
                 />
                 <text
@@ -572,14 +572,14 @@ const StudentSuccessEcosystem = () => {
                   fill="#555555"
                   opacity={hoveredIntrinsic === 'learning' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  onMouseEnter={() => {
+                  /* onMouseEnter={() => {
                     setHoveredIntrinsic('learning');
                     setTooltipIntrinsic('learning');
                   }}
                   onMouseLeave={() => {
                     setHoveredIntrinsic(null);
                     setTooltipIntrinsic(null);
-                  }}
+                  }} */
                   onClick={() => setTooltipIntrinsic(tooltipIntrinsic === 'learning' ? null : 'learning')}
                 />
                 <text
@@ -747,11 +747,12 @@ const StudentSuccessEcosystem = () => {
                   How to Explore
                 </h3>
                 <ul className="text-sm text-blue-800 space-y-2">
-                  <li>• Click or hover on any Focus Wheel domain to see connections</li>
-                  <li>• Hover over Learning Triangle elements for context</li>
-                  <li>• Click on ecological layer labels for system information</li>
-                  <li>• Adjust intrinsic level sliders to simulate system changes</li>
-                  <li>• Watch domains move closer/farther based on alignment</li>
+                  <li>• Click on any Focus Wheel domain to see connections</li>
+                  <li>• Click on Learning Triangle elements for context</li>
+                  <li>• Click on Ecological Layer labels for system information</li>
+                  <li>• Adjust intrinsic need level sliders to simulate individual context changes</li>
+                  <li>• Watch domains move closer/farther based on learning triangle influences</li>
+                  <li>• Note domain placement against ecological layers for recommended intervention pathway</li>
                   <li>• Line thickness and % labels show connection strength</li>
                 </ul>
               </div>
