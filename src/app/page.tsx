@@ -92,7 +92,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'cognition', 
       name: 'Thought', 
-      color: '#7C3AED', 
+      color: '#00a6ed', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
       context: 'Thought (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
@@ -100,7 +100,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'mindset', 
       name: 'Volition', 
-      color: '#DC2626', 
+      color: '#7fb800', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
       context: 'Volition (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
@@ -108,7 +108,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'belonging', 
       name: 'Feeling', 
-      color: '#059669', 
+      color: '#b80c09', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
       context: 'Feeling (a.k.a. Affection) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
@@ -116,7 +116,7 @@ const StudentSuccessEcosystem = () => {
     { 
       id: 'learning', 
       name: 'Learning', 
-      color: '#555555', 
+      color: '#252627', 
       position: 'middle',
       description: 'The successful culmination of all components to drive the mission and outcome of WGU',
       context: 'Learning is conditionally irrespective interpretation of juxtaposed, competing, or remixed methods, definitions, philosophies, frameworks, and/or contexts by which to choose a superior way of knowing, working, behaving, and/or thinking.'
