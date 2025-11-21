@@ -94,23 +94,23 @@ const StudentSuccessEcosystem = () => {
       color: '#7C3AED', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
-      context: 'Cognition encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
+      context: 'Thought (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
     },
     { 
       id: 'mindset', 
-      name: 'Conation', 
+      name: 'Volition', 
       color: '#DC2626', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
-      context: 'Conation (Mindset?) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
+      context: 'Volition (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
     },
     { 
       id: 'belonging', 
-      name: 'Affection', 
+      name: 'Feeling', 
       color: '#059669', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
-      context: 'Affection (Belonging?) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+      context: 'Feeling (a.k.a. Affection) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
     },
     { 
       id: 'learning', 
@@ -123,11 +123,56 @@ const StudentSuccessEcosystem = () => {
   ];
 
   const ecologicalLayers = [
-    { name: 'Chronosystem', radius: 350, color: '#E0D5F0', opacity: 0.3, width: 35 },
-    { name: 'Macrosystem', radius: 306, color: '#D4C8E8', opacity: 0.4, width: 35 },
-    { name: 'Exosystem', radius: 262, color: '#C8BBE0', opacity: 0.45, width: 35 },
-    { name: 'Mesosystem', radius: 221, color: '#BCAED8', opacity: 0.5, width: 30 },
-    { name: 'Microsystem', radius: 180, color: '#B0A1D0', opacity: 0.55, width: 35 }
+    { 
+      id: 'chronosystem', 
+      name: 'Chronosystem', 
+      radius: 350, 
+      color: '#E0D5F0', 
+      opacity: 0.3, 
+      width: 35,
+      description: 'The chronosystem adds a temporal dimension to the ecological model, considering how changes over time affect development. ',
+      context: '•	Life transitions: Such as moving to a new city, changing schools, or family changes like divorce. •	Historical events: Major societal changes, such as economic recessions or technological advancements, that can influence individual experiences and development. The chronosystem emphasizes that development is not static but evolves over time in response to various influences.'
+    },
+    { 
+      id: 'macrosystem', 
+      name: 'Macrosystem', 
+      radius: 306, 
+      color: '#D4C8E8', 
+      opacity: 0.4, 
+      width: 35,
+      description: 'The macrosystem encompasses the broader cultural and societal contexts that influence development.',
+      context: '•	Cultural values: Norms and beliefs that shape behaviors and expectations. •	Economic conditions: The overall economic environment that can affect access to resources and opportunities. •	Political systems: Laws and policies that govern society and impact individual lives. The macrosystem provides the overarching framework within which the other systems operate.'
+    },
+    { 
+      id: 'exosystem',
+      name: 'Exosystem',
+      radius: 262,
+      color: '#C8BBE0',
+      opacity: 0.45,
+      width: 35,
+      description: 'The exosystem includes external environmental settings that indirectly influence the individual.',
+      context: '•	Community resources: Such as local health services, schools, and recreational facilities. •	Parental workplace: The work environment of parents can affect family dynamics and resources available to children. •	Local policies: Decisions made at the community or governmental level that impact the individual’s environment. While individuals may not interact directly with these systems, they still have a significant impact on their development.'
+    },
+    { 
+      id: 'mesosystem',
+      name: 'Mesosystem',
+      radius: 221,
+      color: '#BCAED8',
+      opacity: 0.5,
+      width: 30,
+      description: 'The mesosystem refers to the connections and interactions between different microsystems.', 
+      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance. •	Interactions between peer groups and family, which can influence family dynamics. •	The connection between the neighborhood and school, where community resources can impact educational opportunities. The mesosystem highlights the importance of supportive relationships across different environments.'
+    },
+    { 
+      id: 'microsystem',
+      name: 'Microsystem',
+      radius: 180,
+      color: '#B0A1D0',
+      opacity: 0.55,
+      width: 35,
+      description: 'The microsystem is the innermost layer and includes the immediate environments that an individual interacts with directly.', 
+      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization. •	School: Teachers and classmates that contribute to learning and social experiences. •	Peers: Friends and playmates who influence social skills and behaviors. •	Neighborhood: The local community and its resources, safety, and social norms. Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
+    }
   ];
 
   const clearSelection = () => {
@@ -288,6 +333,8 @@ const StudentSuccessEcosystem = () => {
                     fontWeight="600"
                     opacity="0.6"
                     className="pointer-events-none"
+                    //onClick={() => setTooltipLayer(tooltipLayer === layer.id ? null : layer.id)}
+                    onClick={() => alert(layer.description)}
                   >
                     {layer.name}
                   </text>
