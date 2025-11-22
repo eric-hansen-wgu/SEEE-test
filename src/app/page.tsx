@@ -152,7 +152,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.45,
       width: 35,
       description: 'The exosystem includes external environmental settings that indirectly influence the individual.',
-      context: '•	Community resources: Such as local health services, schools, and recreational facilities.<br />•	Parental workplace: The work environment of parents can affect family dynamics and resources available to children.<br />•	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment.<br /><br />While individuals may not interact directly with these systems, they still have a significant impact on their development.'
+      context: '•	Community resources: Such as local health services, schools, and recreational facilities.<br />•	Workplace: The work environment can affect family dynamics and resources available to students.<br />•	Local policies: Decisions made at the community or governmental level that impact the individual\'s environment.<br /><br />While individuals may not interact directly with these systems, they still have a significant impact on their development.'
     },
     { 
       id: 'mesosystem',
@@ -162,7 +162,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.5,
       width: 30,
       description: 'The mesosystem refers to the connections and interactions between different microsystems.', 
-      context: '•	The relationship between home and school, where parental involvement can affect a child\'s academic performance.<br />•	Interactions between peer groups and family, which can influence family dynamics.<br />•	The connection between the neighborhood and school, where community resources can impact educational opportunities.<br /><br />The mesosystem highlights the importance of supportive relationships across different environments.'
+      context: '•	The relationship between the student\'s immediate environments (work, home, and school), where those with direct involvement can affect a student\'s academic performance.<br />•	Interactions between peer groups and family, which can influence family dynamics.<br />•	The connection between the neighborhood and school, where community resources can impact educational opportunities.<br /><br />The mesosystem highlights the importance of supportive relationships across different environments.'
     },
     { 
       id: 'microsystem',
@@ -172,7 +172,7 @@ const StudentSuccessEcosystem = () => {
       opacity: 0.55,
       width: 35,
       description: 'The microsystem is the innermost layer and includes the immediate environments that an individual interacts with directly.', 
-      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization.<br />•	School: Teachers and classmates that contribute to learning and social experiences.<br />•	Peers: Friends and playmates who influence social skills and behaviors.<br />•	Neighborhood: The local community and its resources, safety, and social norms.<br /><br />Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
+      context: '•	Family: Parents, siblings, and extended family members who provide care and socialization.<br />•	School: Teachers and classmates that contribute to learning and social experiences.<br />•	Peers: Friends and colleagues who influence social dynamics and behaviors.<br />•	Neighborhood: The local community and its resources, safety, and social norms.<br /><br />Interactions within the microsystem are bidirectional, meaning that individuals can influence their environment just as their environment influences them.'
     }
   ];
 
