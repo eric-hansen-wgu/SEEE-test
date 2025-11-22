@@ -375,7 +375,6 @@ const StudentSuccessEcosystem = () => {
                     fontWeight="600"
                     opacity="0.6"
                     className="cursor-pointer hover:opacity-100 transition-opacity"
-                    // UPDATED CLICK HANDLER
                     onClick={() => handleLayerClick(layer.id)}
                   >
                     {layer.name}
@@ -477,7 +476,6 @@ const StudentSuccessEcosystem = () => {
                       fill={domain.color}
                       opacity={isSelected ? 1 : 0.8}
                       className="cursor-pointer transition-all duration-300 hover:opacity-100"
-                      // UPDATED CLICK HANDLER
                       onClick={() => handleDomainClick(domain)}
                     />
                     <text
@@ -515,11 +513,10 @@ const StudentSuccessEcosystem = () => {
                 <circle
                   cx="400"
                   cy="319"
-                  r={hoveredIntrinsic === 'cognition' ? 55 : 45}
+                  r={tooltipIntrinsic === 'cognition' ? 55 : 45}
                   fill={getNeedColorById('cognition')}
-                  opacity={hoveredIntrinsic === 'cognition' ? 0.85 : 0.4}
+                  opacity={tooltipIntrinsic === 'cognition' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  // UPDATED CLICK HANDLER
                   onClick={() => handleIntrinsicClick('cognition')}
                 />
                 <text
@@ -538,11 +535,10 @@ const StudentSuccessEcosystem = () => {
                 <circle
                   cx="330"
                   cy="440"
-                  r={hoveredIntrinsic === 'mindset' ? 55 : 45}
+                  r={tooltipIntrinsic === 'mindset' ? 55 : 45}
                   fill={getNeedColorById('mindset')}
-                  opacity={hoveredIntrinsic === 'mindset' ? 0.85 : 0.4}
+                  opacity={tooltipIntrinsic === 'mindset' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  // UPDATED CLICK HANDLER
                   onClick={() => handleIntrinsicClick('mindset')}
                 />
                 <text
@@ -561,11 +557,10 @@ const StudentSuccessEcosystem = () => {
                 <circle
                   cx="470"
                   cy="440"
-                  r={hoveredIntrinsic === 'belonging' ? 55 : 45}
+                  r={tooltipIntrinsic === 'belonging' ? 55 : 45}
                   fill={getNeedColorById('belonging')}
-                  opacity={hoveredIntrinsic === 'belonging' ? 0.85 : 0.4}
+                  opacity={tooltipIntrinsic === 'belonging' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  // UPDATED CLICK HANDLER
                   onClick={() => handleIntrinsicClick('belonging')}
                 />
                 <text
@@ -584,11 +579,10 @@ const StudentSuccessEcosystem = () => {
                 <circle
                   cx="400"
                   cy="400"
-                  r={hoveredIntrinsic === 'learning' ? 55 : 45}
+                  r={tooltipIntrinsic === 'learning' ? 55 : 45}
                   fill={getNeedColorById('learning')}
-                  opacity={hoveredIntrinsic === 'learning' ? 1 : 0.8}
+                  opacity={tooltipIntrinsic === 'learning' ? 1 : 0.8}
                   className="cursor-pointer transition-all duration-300"
-                  // UPDATED CLICK HANDLER
                   onClick={() => handleIntrinsicClick('learning')}
                 />
                 <text
