@@ -602,17 +602,7 @@ const StudentSuccessEcosystem = () => {
 
           {/* Control Panel & Info */}
           <div className="space-y-6">
-            {/* Clear Button */}
-            {(selectedDomain || hoveredIntrinsic || tooltipIntrinsic || tooltipLayer) && (
-              <button
-                onClick={clearSelection}
-                className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-md"
-              >
-                <X size={18} />
-                Clear Selection
-              </button>
-            )}
-
+            
             {/* Intrinsic Level Controls */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
@@ -760,6 +750,18 @@ const StudentSuccessEcosystem = () => {
                 </ul>
               </div>
             )}
+
+            {/* Clear Button */}
+            {(selectedDomain || hoveredIntrinsic || tooltipIntrinsic || tooltipLayer) && (
+              <button
+                onClick={clearSelection}
+                className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shadow-md"
+              >
+                <X size={18} />
+                Clear Selection
+              </button>
+            )}
+
           </div>
         </div>
 
