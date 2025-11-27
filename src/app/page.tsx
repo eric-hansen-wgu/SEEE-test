@@ -99,11 +99,11 @@ const StudentSuccessEcosystem = () => {
     },
     { 
       id: 'mindset', 
-      name: 'Volition', 
+      name: 'Drive', 
       color: '#007A33', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
-      context: 'Volition (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
+      context: 'Drive (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
     },
     { 
       id: 'belonging', 
@@ -111,7 +111,7 @@ const StudentSuccessEcosystem = () => {
       color: '#C8102E', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
-      context: 'Feeling (a.k.a. Affection) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+      context: 'Feeling (a.k.a. Affect) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
     },
     { 
       id: 'learning', 
