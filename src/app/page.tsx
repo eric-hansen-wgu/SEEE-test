@@ -767,7 +767,7 @@ const StudentSuccessEcosystem = () => {
 
         {/* Footer */}
         <footer className="mt-8 text-center text-sm text-slate-500">
-          <p>Based on a combination of the Trilogy of Mind Learning Triangle, InsideTrack Focus Wheel, and Bronfenbrenner's Ecological Systems Theory | Interactive Prototype Designed for Student Experience | v{React.version}</p>
+          <p>Based on a combination of the Trilogy of Mind Learning Triangle, InsideTrack Focus Wheel, and Bronfenbrenner's Ecological Systems Theory | Interactive Prototype version 2025-12-09</p>
         </footer>
       </div>
     </div>
