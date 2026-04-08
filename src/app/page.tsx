@@ -91,27 +91,27 @@ const StudentSuccessEcosystem = () => {
   const intrinsicNeeds = [
     { 
       id: 'cognition', 
-      name: 'Head', 
+      name: 'Thinking', 
       color: '#002855', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
-      context: 'Head (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
+      context: 'Thinking (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
     },
     { 
       id: 'mindset', 
-      name: 'Hand', 
+      name: 'Doing', 
       color: '#007A33', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
-      context: 'Hand (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
+      context: 'Doing (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
     },
     { 
       id: 'belonging', 
-      name: 'Heart', 
+      name: 'Feeling', 
       color: '#C8102E', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
-      context: 'Heart (a.k.a. Affect) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+      context: 'Feeling (a.k.a. Affect) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
     },
     { 
       id: 'learning', 
@@ -342,10 +342,10 @@ const StudentSuccessEcosystem = () => {
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-slate-800 mb-2">
-            Student Experience Ecosystem Explorer
+            Compass Framework (FKA Student Experience Ecosystem) Explorer
           </h1>
           <p className="text-left text-sm font-medium text-slate-700 mb-3">
-            The Learning Triangle and the Focus Wheel models form a mutually reinforcing ecosystem. The Focus Wheel visualizes the outer (or extrinsic) experience of the learner's environment, while the Learning Triangle represents the inner experience of learning itself. Together, they operate as a bi-directional system — where intrinsic states shape extrinsic outcomes, and extrinsic supports restore or strengthen intrinsic capacities. Use the tool below to explore how intrinsic learner needs and extrinsic support domains dynamically interact in the WGU student experience model.
+            This explorer integrates three complementary models: The Learning Triangle (the intrinsic states of the student in relation to learning and based on the trilogy of mind concepts represented in faculty psychology), Mentoring Amplified Practice (based on InsideTrack's Focus Wheel; providing the extrinsic supports that sustain learners), and Bronfenbrenner's Ecological Systems theory (the layered contexts shaping student life). Together they form a bi-directional ecosystem where inner needs shape outer outcomes, and outer conditions restore inner capacity. Explore the connections below.
           </p>
         </header>
 
