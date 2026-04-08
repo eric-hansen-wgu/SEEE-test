@@ -91,27 +91,27 @@ const StudentSuccessEcosystem = () => {
   const intrinsicNeeds = [
     { 
       id: 'cognition', 
-      name: 'Thought', 
+      name: 'Head', 
       color: '#002855', 
       position: 'top',
       description: 'The capacity to acquire, process, and apply knowledge and skills',
-      context: 'Thought (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
+      context: 'Head (a.k.a. Cognition) encompasses cognitive development, knowledge acquisition, skill mastery, and the ability to transfer learning to new contexts. It represents the intellectual dimension of student success.'
     },
     { 
       id: 'mindset', 
-      name: 'Drive', 
+      name: 'Hand', 
       color: '#007A33', 
       position: 'left',
       description: 'The beliefs, attitudes, and psychological capacities that enable persistence and growth',
-      context: 'Drive (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
+      context: 'Hand (a.k.a. Conation) includes self-efficacy, growth orientation, resilience, motivation, and sense of agency. It represents the psychological and emotional dimension of student success—the internal drive and confidence to persist through challenges.'
     },
     { 
       id: 'belonging', 
-      name: 'Feeling', 
+      name: 'Heart', 
       color: '#C8102E', 
       position: 'right',
       description: 'The sense of connection, identity, and membership within the learning community',
-      context: 'Feeling (a.k.a. Affect) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
+      context: 'Heart (a.k.a. Affect) reflects social integration, feelings of acceptance and value, cultural fit, and connection to institutional identity. It represents the social and relational dimension of student success—feeling part of something larger than oneself.'
     },
     { 
       id: 'learning', 
